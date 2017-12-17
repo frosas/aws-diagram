@@ -1,6 +1,8 @@
 # AWS Diagram
 
-It shows common relationships between the most popular AWS services.
+A simple diagram showing the common relationships between the most popular AWS services.
+
+![The diagram](diagram.png)
 
 ## Usage
 
