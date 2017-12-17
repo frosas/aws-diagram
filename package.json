@@ -1,0 +1,11 @@
+{
+  "name": "aws-diagram",
+  "private": true,
+  "scripts": {
+    "build": "dot diagram.dot -Tpng -o diagram.png",
+    "watch": "onchange -i diagram.dot -- npm run build"
+  },
+  "dependencies": {
+    "onchange": "^3.3.0"
+  }
+}
