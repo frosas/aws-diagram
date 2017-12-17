@@ -28,3 +28,7 @@ $ npm run watch
 - RDS
 - DynamoDB
 - Step Functions?
+
+## Reference
+
+- [Drawing graphs with (Graphviz) dot](https://graphviz.gitlab.io/_pages/pdf/dotguide.pdf)
