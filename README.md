@@ -12,7 +12,7 @@ Install the [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) font.
 $ brew install graphviz node
 $ npm install
 $ npm run build
-$ open diagram.png
+$ open diagram.svg
 ```
 
 ## Development
