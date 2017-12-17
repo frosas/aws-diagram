@@ -28,7 +28,7 @@
 <title>api_gateway_api&#45;&gt;ec2_instance</title>
 <path fill="none" stroke="#555555" d="M568.8118,-1157.219C518.5393,-1148.4885 457.049,-1134.8963 436.9863,-1118.182 422.3625,-1105.9987 412.8805,-1087.3734 406.8405,-1070.2762"/>
 <polygon fill="#555555" stroke="#555555" points="410.0706,-1068.8888 403.6692,-1060.4465 403.4088,-1071.0381 410.0706,-1068.8888"/>
-<text text-anchor="middle" x="479.0068" y="-1110.182" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers</text>
+<text text-anchor="middle" x="479.0068" y="-1110.182" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses</text>
 <text text-anchor="middle" x="479.0068" y="-1096.9935" font-family="Roboto Mono" font-size="10.00" fill="#555555">(via internal</text>
 <text text-anchor="middle" x="479.0068" y="-1083.805" font-family="Roboto Mono" font-size="10.00" fill="#555555">HTTP endpoint)</text>
 </g>
@@ -43,7 +43,7 @@
 <title>api_gateway_api&#45;&gt;elb</title>
 <path fill="none" stroke="#555555" d="M564.7938,-1164.3894C414.6471,-1155.2842 95,-1124.6499 95,-1028.8478 95,-1028.8478 95,-1028.8478 95,-839.9763 95,-737.3124 190.275,-481.4553 264,-410.0095 281.5466,-393.0053 306.0581,-380.5602 326.1772,-372.3677"/>
 <polygon fill="#555555" stroke="#555555" points="327.598,-375.5706 335.6513,-368.6861 325.0626,-369.0459 327.598,-375.5706"/>
-<text text-anchor="middle" x="148.0039" y="-749.5015" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers</text>
+<text text-anchor="middle" x="148.0039" y="-749.5015" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses</text>
 </g>
 <!-- lambda_function -->
 <g id="node4" class="node">
@@ -149,7 +149,7 @@
 <title>elb&#45;&gt;ec2_instance</title>
 <path fill="none" stroke="#555555" d="M350.3454,-377.7392C322.6134,-419.6799 255,-523.8496 255,-542.5181 255,-902.9335 255,-902.9335 255,-902.9335 255,-950.6713 300.4835,-984.7052 339.9672,-1005.2562"/>
 <polygon fill="#555555" stroke="#555555" points="338.8122,-1008.592 349.321,-1009.939 341.9458,-1002.3326 338.8122,-1008.592"/>
-<text text-anchor="middle" x="294.0063" y="-667.0267" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers (via</text>
+<text text-anchor="middle" x="294.0063" y="-667.0267" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses (via</text>
 <text text-anchor="middle" x="294.0063" y="-653.8382" font-family="Roboto Mono" font-size="10.00" fill="#555555">internal IP)</text>
 </g>
 <!-- elb&#45;&gt;ec2_security_group -->
@@ -280,7 +280,7 @@
 <title>compute_instance&#45;&gt;ec2_instance</title>
 <path fill="none" stroke="#555555" d="M882.3273,-917.7317C820.3579,-933.495 718.9114,-958.9039 631,-979.0791 574.2403,-992.1051 509.4606,-1005.7919 462.4727,-1015.5081"/>
 <polygon fill="#555555" stroke="#555555" points="461.5134,-1012.1323 452.427,-1017.581 462.928,-1018.9878 461.5134,-1012.1323"/>
-<text text-anchor="middle" x="780.0063" y="-971.0791" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers (via</text>
+<text text-anchor="middle" x="780.0063" y="-971.0791" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses (via</text>
 <text text-anchor="middle" x="780.0063" y="-957.8906" font-family="Roboto Mono" font-size="10.00" fill="#555555">internal IP)</text>
 </g>
 <!-- compute_instance&#45;&gt;lambda_function -->
@@ -344,14 +344,14 @@
 <title>internet&#45;&gt;api_gateway_api</title>
 <path fill="none" stroke="#555555" d="M547.2693,-785.8916C545.2185,-822.9371 541.2665,-883.079 535,-934.7022 532.6178,-954.3264 526.8772,-959.984 531.9922,-979.0791 547.1828,-1035.7881 583.9671,-1093.0957 610.6113,-1129.4693"/>
 <polygon fill="#555555" stroke="#555555" points="608.032,-1131.8663 616.8075,-1137.8027 613.6494,-1127.6895 608.032,-1131.8663"/>
-<text text-anchor="middle" x="556.0039" y="-964.4849" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers</text>
+<text text-anchor="middle" x="556.0039" y="-964.4849" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses</text>
 </g>
 <!-- internet&#45;&gt;ec2_instance -->
 <g id="edge34" class="edge">
 <title>internet&#45;&gt;ec2_instance</title>
 <path fill="none" stroke="#555555" d="M521.3201,-781.8107C501.479,-805.1212 475.1559,-838.5551 456.9873,-871.1647 436.0584,-908.7287 419.4054,-955.0677 409.0071,-987.7627"/>
 <polygon fill="#555555" stroke="#555555" points="405.6231,-986.8578 405.9831,-997.4465 412.3049,-988.9444 405.6231,-986.8578"/>
-<text text-anchor="middle" x="496.0063" y="-914.7162" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers (via</text>
+<text text-anchor="middle" x="496.0063" y="-914.7162" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses (via</text>
 <text text-anchor="middle" x="496.0063" y="-901.5277" font-family="Roboto Mono" font-size="10.00" fill="#555555">public or</text>
 <text text-anchor="middle" x="496.0063" y="-888.3392" font-family="Roboto Mono" font-size="10.00" fill="#555555">Elastic IP)</text>
 </g>
@@ -360,7 +360,7 @@
 <title>internet&#45;&gt;elb</title>
 <path fill="none" stroke="#555555" d="M565.1214,-716.8861C593.8154,-656.3383 650.7846,-536.1527 650.9922,-535.9238 661.4413,-524.4048 673.3367,-531.4569 681,-517.9238 694.9147,-493.3512 699.7064,-475.5407 681,-454.3864 659.345,-429.8976 564.5887,-450.2842 535,-436.3864 519.5253,-429.118 521.6367,-418.8448 507,-410.0095 473.3245,-389.6814 430.2042,-376.2372 399.7682,-368.5037"/>
 <polygon fill="#555555" stroke="#555555" points="400.5107,-365.0821 389.9647,-366.0983 398.8425,-371.8805 400.5107,-365.0821"/>
-<text text-anchor="middle" x="675.0039" y="-541.1123" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers</text>
+<text text-anchor="middle" x="675.0039" y="-541.1123" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses</text>
 </g>
 <!-- internet&#45;&gt;s3_bucket -->
 <g id="edge37" class="edge">
@@ -388,7 +388,7 @@
 <title>internet&#45;&gt;route_53_zone</title>
 <path fill="none" stroke="#555555" d="M520.6844,-720.2483C509.3104,-706.9723 496.6373,-690.865 486.9922,-675.0267 480.3183,-664.0674 474.2949,-651.5174 469.2771,-639.8098"/>
 <polygon fill="#555555" stroke="#555555" points="472.3679,-638.1257 465.3065,-630.2271 465.9011,-640.8052 472.3679,-638.1257"/>
-<text text-anchor="middle" x="511.0039" y="-660.4324" font-family="Roboto Mono" font-size="10.00" fill="#555555">triggers</text>
+<text text-anchor="middle" x="511.0039" y="-660.4324" font-family="Roboto Mono" font-size="10.00" fill="#555555">accesses</text>
 </g>
 <!-- sns_topic&#45;&gt;lambda_function -->
 <g id="edge46" class="edge">

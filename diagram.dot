@@ -3,8 +3,8 @@ digraph {
   edge [fontsize=10, color="#555555", fontname="Roboto Mono", fontcolor="#555555"]
   
   api_gateway_api [label="API Gateway\nAPI"]
-  api_gateway_api -> ec2_instance [label="triggers\n(via internal\nHTTP endpoint)"]
-  api_gateway_api -> elb [label="triggers"]
+  api_gateway_api -> ec2_instance [label="accesses\n(via internal\nHTTP endpoint)"]
+  api_gateway_api -> elb [label="accesses"]
   api_gateway_api -> lambda_function [label="triggers"]
   api_gateway_api -> region [label="belongs to"]
   api_gateway_api -> s3_bucket [label="accesses"]
@@ -24,7 +24,7 @@ digraph {
   cloudwatch_events_rule -> region [label="belongs to"]
 
   compute_instance [label = "\"Compute\nInstance\""]
-  compute_instance -> ec2_instance [label="triggers (via\ninternal IP)"]
+  compute_instance -> ec2_instance [label="accesses (via\ninternal IP)"]
   compute_instance -> internet [label="accesses"]
   compute_instance -> lambda_function [label="triggers"]
   compute_instance -> service [label="accesses"]
@@ -40,7 +40,7 @@ digraph {
   ec2_security_group -> vpc [label="belongs to"]
 
   elb [label="ELB"]
-  elb -> ec2_instance [label="triggers (via\ninternal IP)"]
+  elb -> ec2_instance [label="accesses (via\ninternal IP)"]
   elb -> ec2_security_group [label="has"]
   elb -> vpc [label="belongs to"]
 
@@ -58,11 +58,11 @@ digraph {
   iam_user -> iam_policy [label="has"]
 
   internet [label="️️Internet\n☁️", color="#aaddff", style="filled"]
-  internet -> api_gateway_api [label="triggers"]
+  internet -> api_gateway_api [label="accesses"]
   internet -> cloudfront_distribution [label="accesses"]
-  internet -> ec2_instance [label="triggers (via\npublic or\nElastic IP)"]
-  internet -> elb [label="triggers"]
-  internet -> route_53_zone [label="triggers"]
+  internet -> ec2_instance [label="accesses (via\npublic or\nElastic IP)"]
+  internet -> elb [label="accesses"]
+  internet -> route_53_zone [label="accesses"]
   internet -> s3_bucket [label="accesses"]
 
   lambda_function [label="Lambda\nFunction"]
