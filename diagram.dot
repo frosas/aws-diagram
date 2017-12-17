@@ -23,13 +23,16 @@ digraph {
   cloudwatch -> lambda [label="triggers (when\nscheduled ⏰)"]
   cloudwatch -> region [label="belongs to"]
 
+  compute_instance [label = "\"Compute\nInstance\""]
+  compute_instance -> ec2 [label="triggers (via\ninternal IP)"]
+  compute_instance -> lambda [label="triggers"]
+  compute_instance -> service [label="accesses"]
+  compute_instance -> sns [label="accesses"]
+  compute_instance -> sqs [label="accesses"]
+
   ec2 [label="EC2"]
-  ec2 -> ec2 [label="triggers (via\ninternal IP)"]
+  ec2 -> compute_instance [label="is a"]
   ec2 -> ec2_security_group [label="has"]
-  ec2 -> lambda [label="triggers"]
-  ec2 -> service [label="accesses"]
-  ec2 -> sns [label="accesses"]
-  ec2 -> sqs [label="accesses"]
   ec2 -> vpc_subnet [label="belongs to"]
 
   ec2_security_group [label="EC2\nSecurity Group"]
@@ -62,11 +65,8 @@ digraph {
   internet -> s3 [label="accesses"]
 
   lambda [label="Lambda"]
-  lambda -> lambda [label="triggers"]
+  lambda -> compute_instance [label="is a"]
   lambda -> region [label="belongs to"]
-  lambda -> service [label="accesses"]
-  lambda -> sns [label="accesses"]
-  lambda -> sqs [label="accesses"]
 
   region [label="Region"]
 
