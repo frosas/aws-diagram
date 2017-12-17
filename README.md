@@ -23,11 +23,8 @@ $ npm run watch
 
 ## TODO
 
-- ECS
-- ElastiCache
-- RDS
-- DynamoDB
-- Step Functions?
+- Services: ECS, ElastiCache, RDS, DynamoDB, Step Functions?
+- Paint services according to their type ("Compute", "Storage", "Network & Content Delivery", ... see grouping in AWS Console)
 
 ## Reference
 
