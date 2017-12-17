@@ -6,6 +6,8 @@ A simple diagram showing the common relationships between the most popular AWS s
 
 ## Usage
 
+Install the [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) font.
+
 ```bash
 $ brew install graphviz node
 $ npm install

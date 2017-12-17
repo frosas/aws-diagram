@@ -1,6 +1,6 @@
 digraph {
-  node [style="filled", color="#F3BB44"]
-  edge [fontsize=10, color="#555555", fontcolor="#555555"]
+  node [style="filled", color="#F3BB44", fontname="Roboto Mono"]
+  edge [fontsize=10, color="#555555", fontname="Roboto Mono", fontcolor="#555555"]
   
   api_gateway [label="API Gateway"]
   api_gateway -> ec2 [label="triggers\n(via internal\nHTTP endpoint)"]
