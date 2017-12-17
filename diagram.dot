@@ -1,0 +1,99 @@
+digraph {
+  edge [fontsize=10]
+  
+  api_gateway [label="API Gateway"]
+  api_gateway -> ec2 [label="triggers\n(via internal\nHTTP endpoint)"]
+  api_gateway -> elb [label="triggers"]
+  api_gateway -> lambda [label="triggers"]
+  api_gateway -> region [label="belongs to"]
+  api_gateway -> s3 [label="accesses"]
+  api_gateway -> service [label="accesses"]
+
+  availability_zone [label="Availability\nZone"]
+  availability_zone -> region [label="belongs to"]
+
+  cloudfront [label="CloudFront"]
+  cloudfront -> api_gateway [label="accesses (if\nedge-optimized)"]
+  cloudfront -> ec2 [label="accesses (via\npublic IP)"]
+  cloudfront -> elb [label="accesses (via\npublic IP)"]
+  cloudfront -> s3 [label="accesses\n(internally)"]
+
+  cloudwatch [label="CloudWatch"]
+  cloudwatch -> lambda [label="triggers (when\nscheduled ⏰)"]
+  cloudwatch -> region [label="belongs to"]
+
+  ec2 [label="EC2"]
+  ec2 -> ec2 [label="triggers (via\ninternal IP)"]
+  ec2 -> ec2_security_group [label="has"]
+  ec2 -> lambda [label="triggers"]
+  ec2 -> service [label="accesses"]
+  ec2 -> sns [label="accesses"]
+  ec2 -> sqs [label="accesses"]
+  ec2 -> vpc_subnet [label="belongs to"]
+
+  ec2_security_group [label="EC2\nSecurity Group"]
+  ec2_security_group -> vpc [label="belongs to"]
+
+  elb [label="ELB"]
+  elb -> ec2 [label="triggers (via\ninternal IP)"]
+  elb -> ec2_security_group [label="has"]
+  elb -> vpc [label="belongs to"]
+
+  iam_group [label="IAM\nGroup"]
+  iam_group -> iam_policy [label="has"]
+
+  iam_policy [label="IAM\nPolicy"]
+  iam_policy -> service [label="defines\naccess to"]
+
+  iam_role [label="IAM\nRole"]
+  iam_role -> iam_policy [label="has"]
+
+  iam_user [label="IAM\nUser"]
+  iam_user -> iam_group [label="belongs to"]
+  iam_user -> iam_policy [label="has"]
+
+  internet [label="️️Internet\n☁️", color="#aaddff", style="filled"]
+  internet -> api_gateway [label="triggers"]
+  internet -> cloudfront [label="accesses"]
+  internet -> ec2 [label="triggers (via\npublic or\nElastic IP)"]
+  internet -> elb [label="triggers"]
+  internet -> route53 [label="triggers"]
+  internet -> s3 [label="accesses"]
+
+  lambda [label="Lambda"]
+  lambda -> lambda [label="triggers"]
+  lambda -> region [label="belongs to"]
+  lambda -> service [label="accesses"]
+  lambda -> sns [label="accesses"]
+  lambda -> sqs [label="accesses"]
+
+  region [label="Region"]
+
+  route53 [label="Route 53"]
+  route53 -> cloudfront [label="refers to"]
+  route53 -> ec2 [label="refers to"]
+  route53 -> elb [label="refers to"]
+  route53 -> s3 [label="refers to"]
+
+  s3 [label="S3\nBucket"]
+  s3 -> lambda [label="triggers"]
+  s3 -> region [label="belongs to"]
+
+  service [label="\"Service\"\n(not linking to\nthe actual services\nfor clarity sake)"]
+
+  sns [label="SNS"]
+  sns -> lambda [label="triggers"]
+  sns -> region [label="belongs to"]
+  sns -> sqs [label="pushes to"]
+
+  sqs [label="SQS"]
+  sqs -> region [label="belongs to"]
+
+  vpc [label="VPC"]
+  vpc -> internet [label="exposed to\n(optional)"]
+  vpc -> region [label="belongs to"]
+
+  vpc_subnet [label="VPC\nSubnet"]
+  vpc_subnet -> availability_zone [label="belongs to"]
+  vpc_subnet -> vpc [label="belongs to"]
+}
