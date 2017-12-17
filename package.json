@@ -2,7 +2,7 @@
   "name": "aws-diagram",
   "private": true,
   "scripts": {
-    "build": "dot diagram.dot -Tpng -o diagram.png",
+    "build": "dot diagram.dot -Tsvg -o diagram.svg",
     "watch": "onchange -i diagram.dot -- npm run build"
   },
   "dependencies": {

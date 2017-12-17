@@ -2,7 +2,7 @@
 
 A simple diagram showing the common relationships between the most popular AWS services.
 
-![The diagram](diagram.png)
+![The diagram](diagram.svg)
 
 ## Usage
 
