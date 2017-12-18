@@ -71,12 +71,19 @@ digraph {
   internet -> cloudfront_distribution [label="accesses"]
   internet -> ec2_instance [label="accesses (via\npublic or\nElastic IP)"]
   internet -> elb [label="accesses\n(if public)"]
+  internet -> rds_instance [label="accesses\n(if public)"]
   internet -> route_53_zone [label="accesses"]
   internet -> s3_bucket [label="accesses\n(if public)"]
 
   lambda_function [label="Lambda\nFunction"]
   lambda_function -> compute_instance [label="is a"]
   lambda_function -> region [label="belongs to"]
+
+  rds_instance [label="RDS\nInstance"]
+  rds_instance -> availability_zone [label="belongs to\n(1+)"]
+  rds_instance -> data_instance [label="is a"]
+  rds_instance -> vpc_subnet [label="belongs to\n(1+)"]
+  rds_instance -> ec2_security_group [label="belongs to\n(1+)"]
 
   region [label="Region"]
 
