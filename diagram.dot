@@ -24,13 +24,15 @@ digraph {
   cloudwatch_events_rule -> region [label="belongs to"]
 
   compute_instance [label = "\"Compute\nInstance\""]
+  compute_instance -> data_instance [label="accesses"]
   compute_instance -> ec2_instance [label="accesses (via\ninternal IP)"]
-  compute_instance -> elasticache_cluster [label="accesses"]
   compute_instance -> internet [label="accesses"]
   compute_instance -> lambda_function [label="triggers"]
   compute_instance -> service [label="accesses"]
   compute_instance -> sns_topic [label="accesses"]
   compute_instance -> sqs_queue [label="accesses"]
+
+  data_instance [label="\"Data\nInstance\""]  
 
   ec2_instance [label="EC2\nInstance"]
   ec2_instance -> compute_instance [label="is a"]
@@ -47,6 +49,7 @@ digraph {
 
   elasticache_cluster [label="ElastiCache\nCluster"]
   elasticache_cluster -> availability_zone [label="belongs to\n(one or more)"]
+  elasticache_cluster -> data_instance [label="is a"]
   elasticache_cluster -> ec2_security_group [label="has"]
   elasticache_cluster -> vpc [label="belongs to\n(optionally)"]
 
@@ -84,6 +87,7 @@ digraph {
   route_53_zone -> s3_bucket [label="refers to"]
 
   s3_bucket [label="S3\nBucket"]
+  s3_bucket -> data_instance [label="is a"]
   s3_bucket -> lambda_function [label="triggers"]
   s3_bucket -> region [label="belongs to"]
 
