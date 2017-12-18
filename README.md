@@ -24,7 +24,7 @@ $ npm run watch
 ## TODO
 
 - Services: ECS, RDS, DynamoDB, Step Functions?
-- Paint services according to their type ("Compute", "Storage", "Network & Content Delivery", ... see grouping in AWS Console)
+- Paint services according to their type ("Compute", "Storage", "Network & Content Delivery", ... see grouping in AWS Console). See https://jsbin.com/guwazen/4/edit?js,console,output.
 
 ## Reference
 
