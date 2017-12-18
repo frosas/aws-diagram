@@ -25,6 +25,7 @@ digraph {
 
   compute_instance [label = "\"Compute\nInstance\""]
   compute_instance -> ec2_instance [label="accesses (via\ninternal IP)"]
+  compute_instance -> elasticache_cluster [label="accesses"]
   compute_instance -> internet [label="accesses"]
   compute_instance -> lambda_function [label="triggers"]
   compute_instance -> service [label="accesses"]
@@ -43,6 +44,11 @@ digraph {
   elb -> ec2_instance [label="accesses (via\ninternal IP)"]
   elb -> ec2_security_group [label="has"]
   elb -> vpc [label="belongs to"]
+
+  elasticache_cluster [label="ElastiCache\nCluster"]
+  elasticache_cluster -> availability_zone [label="belongs to\n(one or more)"]
+  elasticache_cluster -> ec2_security_group [label="has"]
+  elasticache_cluster -> vpc [label="belongs to\n(optionally)"]
 
   iam_group [label="IAM\nGroup"]
   iam_group -> iam_policy [label="has"]
