@@ -48,7 +48,7 @@ digraph {
   elb -> vpc [label="belongs to"]
 
   elasticache_cluster [label="ElastiCache\nCluster"]
-  elasticache_cluster -> availability_zone [label="belongs to\n(one or more)"]
+  elasticache_cluster -> availability_zone [label="belongs to\n(1+)"]
   elasticache_cluster -> data_instance [label="is a"]
   elasticache_cluster -> ec2_security_group [label="has"]
   elasticache_cluster -> vpc [label="belongs to\n(optionally)"]
@@ -70,9 +70,9 @@ digraph {
   internet -> api_gateway_api [label="accesses"]
   internet -> cloudfront_distribution [label="accesses"]
   internet -> ec2_instance [label="accesses (via\npublic or\nElastic IP)"]
-  internet -> elb [label="accesses"]
+  internet -> elb [label="accesses\n(if public)"]
   internet -> route_53_zone [label="accesses"]
-  internet -> s3_bucket [label="accesses"]
+  internet -> s3_bucket [label="accesses\n(if public)"]
 
   lambda_function [label="Lambda\nFunction"]
   lambda_function -> compute_instance [label="is a"]
